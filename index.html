@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday 💖 Bubuuduu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <audio id="confetti-audio" src="assets/sounds/confetti1.mp3" preload="auto"></audio>
+  <audio id="balloon-audio" src="assets/sounds/balloon1.mp3" preload="auto"></audio>
+  <audio id="bgm" src="assets/sounds/oiia.mp3" preload="auto"></audio>
+
+  <div class="overlay"></div>
+
+  <header class="hero">
+    <h1 class="neon">Happy Birthday, My Love! 🎉</h1>
+    <p class="tagline">You light up my world like a neon sign ✨</p>
+    <div class="hero-actions">
+      <button id="playConfetti" class="btn glow">Celebrate!</button>
+      <button id="spawnBalloons" class="btn glow">Release Balloons 🎈</button>
+      <button id="toggleMusic" class="btn glow">Sound On/Off 🔊</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Slideshow box -->
+    <section class="card" id="slideshow-card">
+      <h2 class="section-title">Our Moments</h2>
+      <div id="slideshow" class="slideshow">
+        <!-- Slides are injected by script.js based on mediaFiles[] -->
+        <div class="controls">
+          <button id="prev" class="btn small">⟨ Prev</button>
+          <button id="pause" class="btn small">⏸️ Pause</button>
+          <button id="next" class="btn small">Next ⟩</button>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- Message area -->
+    <section class="card" id="messages-card">
+      <h2 class="section-title">A Letter For You</h2>
+      <textarea id="messageInput" class="message-input" placeholder="Write your cute message here..."></textarea>
+      <div class="msg-actions">
+        <button id="saveMessage" class="btn">Save Message 💌</button>
+        <button id="showMessage" class="btn">Show On Screen ✨</button>
+      </div>
+      <div id="messageDisplay" class="message-display hidden"></div>
+    </section>
+  </main>
+
+  <!-- Balloon container -->
+  <div id="balloon-layer"></div>
+
+  <footer> </footer>
+  <script src="script.js"></script>
+</body>
+</html>

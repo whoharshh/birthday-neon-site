@@ -1,0 +1,153 @@
+/* Neon Birthday Theme */
+:root{
+  --bg-overlay: rgba(0,0,0,0.45);
+  --neon-pink: #ff3df2;
+  --neon-cyan: #26ffff;
+  --neon-yellow: #ffe066;
+  --card: rgba(10,10,16,0.6);
+  --text: #f2f6ff;
+  --muted: #9fb3c8;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  overflow-x:hidden;
+  background:#0b0c11 url('assets/images/background.jpg') center/cover no-repeat fixed;
+}
+
+.overlay{
+  position:fixed; inset:0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.2), rgba(0,0,0,.6));
+  z-index:-1;
+}
+
+.neon{
+  color: var(--neon-pink);
+  text-shadow:
+    0 0 7px var(--neon-pink),
+    0 0 10px var(--neon-pink),
+    0 0 21px var(--neon-pink),
+    0 0 42px var(--neon-cyan),
+    0 0 82px var(--neon-cyan);
+}
+
+.hero{
+  text-align:center;
+  padding: 5rem 1rem 2rem;
+  backdrop-filter: blur(1px);
+}
+
+.tagline{ color: var(--muted); margin-top:.2rem; }
+
+.hero-actions{ margin-top:1rem; display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; }
+
+.btn{
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--neon-cyan);
+  padding: .6rem 1rem;
+  border-radius: 999px;
+  cursor:pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 0 10px rgba(38,255,255,.3);
+}
+.btn:hover{ transform: translateY(-2px); box-shadow: 0 0 20px rgba(38,255,255,.6); }
+.btn.small{ padding:.35rem .7rem; font-size:.9rem; }
+.glow{ border-color: var(--neon-pink); box-shadow: 0 0 14px rgba(255,61,242,.5); }
+
+main{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  gap: 1.2rem;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 1.2rem;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+}
+
+.section-title{
+  margin: .2rem 0 1rem;
+  color: var(--neon-yellow);
+  text-shadow: 0 0 8px rgba(255,224,102,.5);
+}
+
+.slideshow{
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.2);
+  min-height: 280px;
+}
+
+.slide{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transition: opacity .7s ease;
+  background:#0c0f18;
+}
+.slide.active{ opacity:1; }
+.slide img, .slide video{ width:100%; height:100%; object-fit:cover; }
+
+.controls{
+  position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
+  display:flex; gap:.5rem; z-index:2;
+}
+
+.hint{ color: var(--muted); font-size:.85rem; margin-top:.6rem; }
+
+.message-input{
+  width:100%; min-height: 140px; padding:.8rem;
+  border-radius: .75rem;
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  border:1px solid rgba(255,255,255,.15);
+}
+
+.msg-actions{ margin-top:.6rem; display:flex; gap:.6rem; flex-wrap:wrap; }
+.message-display{
+  margin-top:.8rem;
+  padding:1rem;
+  border-left: 4px solid var(--neon-pink);
+  background: rgba(255,255,255,.06);
+  border-radius:.5rem;
+  animation: appear .4s ease;
+}
+.hidden{ display:none; }
+
+@keyframes appear{ from{ opacity:0; transform: translateY(6px); } to{ opacity:1; transform:none; } }
+
+/* Balloons */
+#balloon-layer{ position:fixed; inset:0; pointer-events:none; overflow:hidden; }
+.balloon{
+  position:absolute;
+  bottom:-120px;
+  width:60px; height:80px;
+  border-radius: 50% 50% 50% 50%;
+  box-shadow: inset -8px -12px 18px rgba(0,0,0,.25), 0 0 16px rgba(255,255,255,.2);
+  animation: float linear forwards;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.35));
+}
+.balloon::after{
+  content:''; position:absolute; left:50%; transform:translateX(-50%); bottom:-16px;
+  width:2px; height:40px; background: rgba(255,255,255,.6);
+}
+@keyframes float{
+  to{ transform: translateY(-120vh) translateX(0); opacity: .9; }
+}
+
+/* Confetti canvas */
+#confetti-canvas{ position:fixed; inset:0; pointer-events:none; }
+footer{ text-align:center; padding:2rem 0 3rem; color:var(--muted); font-size:.9rem; }
+.tiny{ opacity:.8; }
