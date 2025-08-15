@@ -2,7 +2,6 @@
 const mediaFiles = [
   // images
   'assets/media/photo1.jpg',
-  'assets/media/photo2.jpg',
   'assets/media/photo3.jpg',
   'assets/media/photo4.jpg',
   'assets/media/photo5.jpg',
