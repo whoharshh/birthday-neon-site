@@ -31,7 +31,7 @@ const mediaFiles = [
   'assets/media/photo30.jpg',
   'assets/media/photo31.jpg',
   'assets/media/photo32.jpg',
-  'assets/media/photo33.jpg',
+
 
 ];
 
