@@ -11,7 +11,6 @@ const mediaFiles = [
   'assets/media/photo9.jpg',
   'assets/media/photo10.jpg',
   'assets/media/photo11.jpg',
-  'assets/media/photo12.jpg',
   'assets/media/photo14.jpg',
   'assets/media/photo15.jpg',
   'assets/media/photo16.jpg',
